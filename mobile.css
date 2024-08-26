@@ -24,32 +24,33 @@ body {
 /* Navbar Styles */
 /* Hide navbar on mobile */
 .navbar {
-    display: none;
-}
-
-.navbar.show {
-    top: 0; /* Show navbar on scroll up */
-}
-
-.navbar .container {
+    position: fixed;
+    bottom: 0; /* Move navbar to the bottom */
+    left: 0;
+    width: 100%;
+    background-color: #f2b632;
+    border-top: 1px solid #f5cc15;
+    z-index: 1000; /* Ensure it is above other elements */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-}
-
-.nav-links {
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .nav-links {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.nav-links a {
+    gap: 15px;
+  }
+  
+  .nav-links a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-}
+    font-size: 0.9rem;
+    text-align: center;
+    display: block;
+  }
 
 /* Hero Section */
 .hero {
