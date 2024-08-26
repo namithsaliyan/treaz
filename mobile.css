@@ -22,19 +22,19 @@ body {
 }
 
 /* Navbar Styles */
-/* Hide navbar on mobile */
+/* Navbar Styles for Mobile */
 .navbar {
     position: fixed;
-    bottom: 0; /* Move navbar to the bottom */
+    top: 0; /* Position navbar at the top */
     left: 0;
     width: 100%;
     background-color: #f2b632;
-    border-top: 1px solid #f5cc15;
+    border-bottom: 1px solid #f5cc15;
     z-index: 1000; /* Ensure it is above other elements */
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
   
   .nav-links {
