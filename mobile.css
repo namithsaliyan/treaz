@@ -28,7 +28,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #f2b632;
+    background-color: #8413db;
     border-bottom: 1px solid #f5cc15;
     z-index: 1000; /* Ensure it is above other elements */
     display: flex;
