@@ -45,3 +45,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+let lastScrollY = window.scrollY;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > lastScrollY) {
+    navbar.classList.remove('show');
+  } else {
+    navbar.classList.add('show');
+  }
+  lastScrollY = window.scrollY;
+});
