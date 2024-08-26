@@ -23,9 +23,9 @@ body {
 
 /* Navbar Styles */
 /* Navbar Styles for Mobile */
-  .navbar {
+.navbar {
     position: fixed;
-    top: 0; /* Position navbar at the top */
+    top: 0;
     left: 0;
     width: 100%;
     background-color: #f2b632;
