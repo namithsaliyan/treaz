@@ -22,7 +22,7 @@ body {
 }
 
 /* Navbar Styles */
-/* Styles for Navbar */
+/* Navbar Styles for Mobile */
 .navbar {
     position: fixed;
     top: 0; /* Position navbar at the top */
@@ -35,51 +35,24 @@ body {
     justify-content: space-between; /* Adjust alignment if needed */
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* Navigation Links */
-.nav-links {
+  }
+  
+  /* Navigation Links */
+  .nav-links {
     list-style: none;
     display: flex;
     gap: 15px;
     margin: 0;
     padding: 0;
-}
-
-.nav-links a {
+  }
+  
+  .nav-links a {
     text-decoration: none;
     color: #d1cfcf;
     font-weight: 500;
     font-size: 0.9rem;
     text-align: center;
-}
-
-/* Logo Styling */
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center logo horizontally */
-    flex-grow: 1; /* Allow the logo to grow and center itself */
-}
-
-/* Mobile Specific Styling */
-@media (max-width: 1023px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center; /* Center all items including the logo */
-        text-align: center;
-    }
-    
-    .nav-links {
-        display: block; /* Stack navigation links vertically on mobile */
-        margin-top: 10px; /* Space between logo and links */
-    }
-    
-    .nav-links li {
-        margin-bottom: 10px; /* Space between list items */
-    }
-}
-
+  }
 
 /* Hero Section */
 .hero {
