@@ -32,9 +32,19 @@ body {
     border-bottom: 1px solid #f5cc15;
     z-index: 1000; /* Ensure it is above other elements */
     display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .navbar .logo {
+    display: inline-block;
+    vertical-align: middle; /* Aligns vertically with other items */
+  }
+  
+  .navbar .menu-toggle {
+    display: none; /* Hide the toggle button on larger screens */
   }
   
   .nav-links {
@@ -49,7 +59,34 @@ body {
     font-weight: 500;
     font-size: 0.9rem;
     text-align: center;
+  }
+  
+  /* Dropdown Styles */
+  .navbar .dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Position below the navbar */
+    left: 0;
+    width: 100%;
+    background-color: #f2b632;
+    padding: 10px 0;
+  }
+  
+  .navbar .dropdown a {
     display: block;
+    padding: 10px 15px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown a:hover {
+    background-color: #e5a321;
+  }
+  
+  /* Show dropdown on toggle */
+  .navbar .dropdown.show {
+    display: flex;
   }
 
 /* Hero Section */
