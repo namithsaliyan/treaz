@@ -24,35 +24,41 @@ body {
 /* Navbar Styles */
 /* Navbar Styles for Mobile */
 .navbar {
-    position: fixed;
-    top: 0; /* Position navbar at the top */
-    left: 0;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    padding: 10px 0;
     background-color: #100c01;
     border-bottom: 1px solid #120f01;
-    z-index: 1000; /* Ensure it is above other elements */
+}
+
+.navbar .container {
     display: flex;
-    justify-content: space-between; /* Adjust alignment if needed */
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-  
-  /* Navigation Links */
-  .nav-links {
-    list-style: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    margin-bottom: 10px; /* Space between logo and navigation links */
+}
+
+.nav-links {
     display: flex;
-    gap: 15px;
+    flex-direction: column;
+    gap: 10px; /* Space between links */
+    align-items: center; /* Center links horizontally */
     margin: 0;
     padding: 0;
-  }
-  
-  .nav-links a {
+}
+
+.nav-links a {
     text-decoration: none;
     color: #d1cfcf;
     font-weight: 500;
     font-size: 0.9rem;
     text-align: center;
-  }
+}
 
 /* Hero Section */
 .hero {
