@@ -280,27 +280,33 @@ body {
     font-weight: bold;
 }
 
-/* Styles for Social Media Section */
 .social {
     padding: 2rem 0;
     background-color: #f4f4f4;
 }
+
 .social-links {
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    flex-direction: column; /* Stacks the items vertically */
+    gap: 1rem; /* Space between each social link */
+    align-items: center; /* Centers the links */
 }
+
+/* Styling for Each Social Link */
 .social-link {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #333;
+    justify-content: center; /* Centers the content horizontally in each link */
 }
+
 .social-link img {
     width: 24px;
     height: 24px;
-    margin-right: 0.5rem;
+    margin-bottom: 0.5rem; /* Adds space below the icon */
 }
+
 .social-link span {
     font-weight: bold;
 }
