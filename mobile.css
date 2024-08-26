@@ -28,8 +28,8 @@ body {
     top: 0; /* Position navbar at the top */
     left: 0;
     width: 100%;
-    background-color: #f2b632;
-    border-bottom: 1px solid #f5cc15;
+    background-color: #100c01;
+    border-bottom: 1px solid #120f01;
     z-index: 1000; /* Ensure it is above other elements */
     display: flex;
     justify-content: space-between; /* Adjust alignment if needed */
