@@ -23,7 +23,7 @@ body {
 
 /* Navbar Styles */
 /* Navbar Styles for Mobile */
-.navbar {
+  .navbar {
     position: fixed;
     top: 0; /* Position navbar at the top */
     left: 0;
@@ -32,25 +32,23 @@ body {
     border-bottom: 1px solid #f5cc15;
     z-index: 1000; /* Ensure it is above other elements */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
+    flex-direction: column; /* Stack elements vertically */
+    padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
   
-  .navbar .logo {
-    display: inline-block;
-    vertical-align: middle; /* Aligns vertically with other items */
-  }
-  
-  .navbar .menu-toggle {
-    display: none; /* Hide the toggle button on larger screens */
+  .navbar .container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
   }
   
   .nav-links {
     list-style: none;
     display: flex;
     gap: 15px;
+    flex-wrap: wrap; /* Allow wrapping of items */
+    justify-content: center;
   }
   
   .nav-links a {
@@ -59,34 +57,8 @@ body {
     font-weight: 500;
     font-size: 0.9rem;
     text-align: center;
-  }
-  
-  /* Dropdown Styles */
-  .navbar .dropdown {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px; /* Position below the navbar */
-    left: 0;
-    width: 100%;
-    background-color: #f2b632;
-    padding: 10px 0;
-  }
-  
-  .navbar .dropdown a {
     display: block;
-    padding: 10px 15px;
-    color: #333;
-    font-weight: 500;
-  }
-  
-  .navbar .dropdown a:hover {
-    background-color: #e5a321;
-  }
-  
-  /* Show dropdown on toggle */
-  .navbar .dropdown.show {
-    display: flex;
+    padding: 8px 12px; /* Add padding for better click area */
   }
 
 /* Hero Section */
