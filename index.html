@@ -4,94 +4,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TREAZ</title>
+    <title>Treaz</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Google Fonts (for modern typography) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <!-- Header / Navigation -->
+    <header class="navbar">
         <div class="container">
-            <h1>TREAZ</h1>
+            <div class="logo">
+                <a href="#" style="color: rgb(235, 235, 235); text-decoration: none; font-weight: bold;">TREAZ</a>
+            </div>
             <nav>
-                <ul>
+                <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="home">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Experience the Essence of Pure Hydration</h1>
+            <p>Our mineral water is sourced from the finest natural springs, delivering a refreshing taste that quenches
+                your thirst and rejuvenates your spirit.</p>
+            <a href="#products" class="cta-button">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
         <div class="container">
-            <h2>Welcome to Treaz</h2>
-            <p>Providing the purest drinking water for your needs. Stay hydrated, stay healthy!</p>
-            <!-- Centered gallery with transition effect -->
-            <div class="gallery-wrapper">
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="banner.png" alt="Custom Water Bottle 1">
-                        <p>Refreshing Spring Water</p>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="banner.png" alt="Custom Water Bottle 2">
-                        <p>Eco-Friendly Bottle</p>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="banner.png" alt="Custom Water Bottle 3">
-                        <p>Premium Purified Water</p>
-                    </div>
-                    <!-- Add more gallery items as needed -->
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="http://neeram.com/res/img/banner.png" alt="Product 1">
+                    <h3>Natural Spring Water</h3>
+                    <p>500ml</p>
+                </div>
+                <div class="product-item">
+                    <img src="http://neeram.com/res/img/banner.png" alt="Product 2">
+                    <h3>Still Mineral Water</h3>
+                    <p>750ml</p>
+                </div>
+                <div class="product-item">
+                    <img src="http://neeram.com/res/img/banner.png" alt="Product 3">
+                    <h3>Sparkling Mineral Water</h3>
+                    <p>1L</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    
 
-    <section id="about">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
             <h2>About Us</h2>
-            <p>We are a leading water company dedicated to providing high-quality drinking water to our customers. Our mission is to ensure that every sip you take is refreshing and pure.</p>
+            <p>Our water is sourced from the purest springs, offering a unique taste that is both crisp and refreshing. We are committed to sustainability and use eco-friendly packaging for all our products.</p>
         </div>
     </section>
 
-    <section id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Bottled Drinking Water</li>
-                <li>Custom-Branded Bottles</li>
-                <li>Water Delivery Service</li>
-                <li>Water Purification Systems</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
             <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-            
-                <button type="submit">Send Message</button>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
             </form>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Your Water Business. All rights reserved.</p>
+            <p>&copy; 2024 Treaz. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- External JavaScript -->
+    <script src="scripts.js"></script>
 </body>
 </html>
