@@ -25,30 +25,33 @@ body {
 /* Navbar Styles for Mobile */
 .navbar {
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #8413db;
-    border-bottom: 1px solid #f5cc15;
+    background-color: #f2b632;
+    border-top: 1px solid #f5cc15;
     z-index: 1000; /* Ensure it is above other elements */
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
     padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
   
   .navbar .container {
     display: flex;
     flex-direction: column; /* Stack items vertically */
     align-items: center;
+    width: 100%;
   }
   
   .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
-    flex-wrap: wrap; /* Allow wrapping of items */
-    justify-content: center;
+    flex-direction: column; /* Stack links vertically */
+    gap: 10px;
+    width: 100%;
+    align-items: center;
   }
   
   .nav-links a {
@@ -58,7 +61,8 @@ body {
     font-size: 0.9rem;
     text-align: center;
     display: block;
-    padding: 8px 12px; /* Add padding for better click area */
+    padding: 10px 15px; /* Add padding for better click area */
+    width: 100%; /* Full width for touch targets */
   }
 
 /* Hero Section */
