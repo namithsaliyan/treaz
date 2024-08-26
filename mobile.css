@@ -22,14 +22,9 @@ body {
 }
 
 /* Navbar Styles */
+/* Hide navbar on mobile */
 .navbar {
-    background-color: #f2b632;
-    border-bottom: 1px solid #f5cc15;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    top: -60px; /* Initially hidden */
-    transition: top 0.3s ease;
+    display: none;
 }
 
 .navbar.show {
