@@ -1,42 +1,27 @@
-/* mobile.css */
-
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Global Styles */
 body {
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-/* Container */
-.container {
-    width: 90%;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-/* Navbar Styles */
+/* Navbar hidden by default */
 .navbar {
     background-color: #f2b632;
     border-bottom: 1px solid #f5cc15;
-    position: fixed;
     width: 100%;
+    position: fixed;
+    top: 0;
     z-index: 1000;
-    top: -60px; /* Initially hidden */
-    transition: top 0.3s ease;
+    transition: top 0.3s; /* Smooth transition for navbar */
 }
 
-.navbar.show {
-    top: 0; /* Show navbar on scroll up */
-}
-
-.navbar .container {
+/* Other mobile-specific styles */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,8 +31,7 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .nav-links a {

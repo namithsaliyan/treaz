@@ -46,14 +46,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-let lastScrollY = window.scrollY;
-const navbar = document.querySelector('.navbar');
+// script.js
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > lastScrollY) {
-    navbar.classList.remove('show');
-  } else {
-    navbar.classList.add('show');
-  }
-  lastScrollY = window.scrollY;
+document.addEventListener("DOMContentLoaded", function () {
+    let lastScrollTop = 0;
+    const navbar = document.querySelector(".navbar");
+
+    window.addEventListener("scroll", function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop) {
+            // User is scrolling down, hide the navbar
+            navbar.style.top = "-80px"; // Adjust based on navbar height
+        } else {
+            // User is scrolling up, show the navbar
+            navbar.style.top = "0";
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+    });
 });
