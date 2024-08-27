@@ -173,3 +173,30 @@ body {
     text-align: center;
     padding: 15px 0;
 }
+/* Write a Review Section (Mobile) */
+.write-review {
+    padding: 40px 20px; /* Reduced padding for smaller screens */
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.write-review .container {
+    width: 100%; /* Full width for mobile */
+    padding: 0 10px; /* Side padding for mobile */
+}
+
+.write-review h2 {
+    font-size: 2em; /* Smaller font size for headings on mobile */
+    margin-bottom: 15px; /* Reduced margin */
+}
+
+.write-review p {
+    font-size: 1em; /* Standard font size for text on mobile */
+    margin-bottom: 30px; /* Reduced margin */
+}
+
+.write-review .cta-button {
+    padding: 12px 25px; /* Slightly smaller padding for mobile button */
+    font-size: 1em; /* Standard font size for button text */
+}
+
