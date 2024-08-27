@@ -22,16 +22,18 @@ body {
 }
 
 /* Navbar Styles */
+/* Mobile Navbar Styles */
 .navbar {
     background: linear-gradient(135deg, #0099ff, #00cc99); /* Keep the gradient background */
     color: #ffffff;
     padding: 0.8rem; /* Reduced padding for smaller screens */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slightly lighter shadow */
+    position: relative; /* Needed for the absolute positioning of the mobile menu */
 }
 
 .navbar .container {
     display: flex;
-    flex-direction: column; /* Stack logo and nav links vertically */
+    justify-content: space-between;
     align-items: center;
     max-width: 100%; /* Full width for mobile */
     margin: auto;
@@ -43,28 +45,68 @@ body {
     font-weight: bold;
     font-size: 1.5rem; /* Smaller font size for mobile */
     letter-spacing: 0.5px; /* Reduced letter spacing */
-    margin-bottom: 0.5rem; /* Space between logo and nav links */
+}
+
+.navbar .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.navbar .menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    margin: 3px 0;
+    transition: 0.3s;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column; /* Stack links vertically */
-    gap: 0.5rem; /* Reduced gap between links */
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    background: #0099ff; /* Background color for the dropdown */
+    position: absolute;
+    top: 60px; /* Adjust based on your logo height */
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it appears on top */
+}
+
+.nav-links.show {
+    display: flex; /* Show the menu when toggled */
 }
 
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
-    padding: 0.6rem 1rem; /* Smaller padding */
-    border-radius: 25px; /* Rounded corners for buttons */
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    text-align: center; /* Center text for mobile buttons */
+    text-align: center;
+    display: block; /* Block display to make links take full width */
+    margin-bottom: 0.5rem;
 }
 
 .nav-links a:hover {
     background-color: #ffffff;
     color: #0099ff;
+}
+
+/* Toggle Icon Animation */
+.navbar .menu-toggle.active div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.navbar .menu-toggle.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar .menu-toggle.active div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Hero Section */
