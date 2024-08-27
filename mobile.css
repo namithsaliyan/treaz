@@ -388,3 +388,71 @@ body {
 .detail-item a:hover {
     text-decoration: underline;
 }
+/* Mobile Styles */
+@media screen and (max-width: 1023px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #333;
+    }
+
+    .logo {
+        flex: 1;
+        text-align: center;
+    }
+
+    .logo a {
+        color: rgb(235, 235, 235);
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .reference-button {
+        background-color: #555;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .reference-sections {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: #333;
+        width: 250px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .reference-sections ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .reference-sections li {
+        margin: 10px 0;
+    }
+
+    .reference-sections a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .reference-sections a:hover {
+        text-decoration: underline;
+    }
+}
