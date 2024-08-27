@@ -1,0 +1,143 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+/* Header / Navigation */
+.navbar {
+    background: linear-gradient(135deg, #0099ff, #00cc99); /* Gradient color for a modern look */
+    color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.navbar .logo a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.8rem;
+    letter-spacing: 1px; /* Slight letter spacing for modern typography */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.8rem 1.4rem;
+    border-radius: 30px; /* Rounded corners for buttons */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ffffff;
+    color: #0099ff;
+}
+
+/* Back Button Styling */
+.nav-links .cta-button {
+    background-color: #ffffff;
+    color: #0099ff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 1.4rem;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-links .cta-button:hover {
+    background-color: #f0f0f0;
+    color: #007acc;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Reviews Section */
+.reviews {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.reviews h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Reviews Container */
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Review Item */
+.review-item {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 8px solid #00cc99; /* Modern color for the left border */
+    position: relative;
+}
+
+.review-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.review-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(to bottom, #00cc99, #0099ff); /* Gradient border effect */
+    border-radius: 12px 0 0 12px; /* Rounded top-left and bottom-left corners */
+}
+
+.review-item h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1e1e1e;
+    margin-bottom: 0.5rem;
+}
+
+.review-item p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #0099ff, #00cc99); /* Matching gradient */
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
