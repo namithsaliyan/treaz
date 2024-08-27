@@ -22,42 +22,82 @@ body {
 }
 
 /* Navbar Styles */
-/* Navbar Styles for Mobile */
-.navbar {
-    position: fixed;
-    top: 0; /* Position navbar at the top */
-    left: 0;
-    width: 100%;
-    background-color: #100c01;
-    border-bottom: 1px solid #120f01;
-    z-index: 1000; /* Ensure it is above other elements */
-    display: flex;
-    justify-content: space-between; /* Adjust alignment if needed */
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
+/* Mobile Styles */
+@media screen and (max-width: 1023px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        background-color: #333;
+        position: relative;
+        overflow: hidden;
+    }
 
-.logo a {
-    color: rgb(235, 235, 235);
-    text-decoration: none;
-    font-weight: bold;
-}
+    .logo {
+        flex: 1;
+        text-align: center;
+    }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column; /* Stack links vertically */
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-}
+    .logo a {
+        color: rgb(235, 235, 235);
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px; /* Reduced font size */
+    }
 
-.nav-links a {
-    text-decoration: none;
-    color: #d1cfcf;
-    font-weight: 500;
-    font-size: 0.9rem;
-    text-align: center;
+    .desktop-nav {
+        display: none;
+    }
+
+    .reference-button {
+        background-color: #555;
+        color: #fff;
+        border: none;
+        padding: 5px 10px; /* Reduced padding */
+        cursor: pointer;
+        font-size: 16px; /* Reduced font size */
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .reference-sections {
+        display: none;
+        position: absolute;
+        top: 50px; /* Adjusted to fit under the header */
+        right: 10px;
+        background-color: #333;
+        width: 100%; /* Full width to fit screen */
+        max-height: 200px; /* Added max-height for scroll if needed */
+        overflow-y: auto; /* Enable vertical scrolling if content overflows */
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .reference-sections ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap; /* Allows items to wrap onto the next line */
+        justify-content: space-around; /* Space items evenly */
+    }
+
+    .reference-sections li {
+        margin: 0; /* Removed margin to fit items in one line */
+    }
+
+    .reference-sections a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px; /* Reduced font size */
+        padding: 5px; /* Padding for better touch experience */
+        display: inline-block; /* Ensure padding is applied correctly */
+    }
+
+    .reference-sections a:hover {
+        text-decoration: underline;
+    }
 }
 
 /* Hero Section */
