@@ -1,41 +1,40 @@
+/* mobile.css */
+
 /* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Global Styles */
 body {
     line-height: 1.6;
-    color: #333;
-    width: 100%;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    color: #2c3e50; /* Darker text color for contrast */
+    background-color: #e8f7f5; /* Light seafoam green background */
 }
 
 /* Container */
 .container {
-    width: 100%; /* Full width on mobile */
+    width: 90%;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 15px; /* Adds some padding to avoid content touching the edge */
 }
 
-/* Navbar Styles */
+/* Navbar Styles for Mobile */
 .navbar {
     position: fixed;
-    top: 0;
+    top: 0; /* Position navbar at the top */
     left: 0;
     width: 100%;
-    background-color: #100c01;
-    border-bottom: 1px solid #120f01;
-    z-index: 1000;
+    background-color: #005f73; /* Dark teal background */
+    border-bottom: 1px solid #004c5e;
+    z-index: 1000; /* Ensure it is above other elements */
     display: flex;
-    justify-content: space-between;
-    padding: 10px 15px; /* Adds padding */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    justify-content: center; /* Center the content */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Navigation Links */
@@ -45,15 +44,24 @@ body {
     gap: 15px;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap; /* Allows wrapping of links on smaller screens */
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #d1cfcf;
-    font-weight: 500;
+    color: #e0fbfc; /* Light color for contrast */
+    background-color: #0a9396; /* Button-like background */
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
     font-size: 0.9rem;
     text-align: center;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #94d2bd; /* Lighter teal on hover */
+    border-color: #0a9396; /* Border color on hover */
 }
 
 /* Hero Section */
@@ -100,59 +108,239 @@ body {
     z-index: 3;
     max-width: 800px;
     padding: 0 20px;
-    overflow-x: hidden; /* Prevents horizontal overflow */
 }
 
-/* Product Section */
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #e0fbfc; /* Light color for contrast */
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #e0fbfc; /* Light color for contrast */
+}
+
+.cta-button {
+    background-color: #ee9b00; /* Sandy beige */
+    color: #333;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ca6702; /* Darker beige */
+}
+
+/* Parallax Effect */
+.hero:hover .hero-background {
+    transform: scale(1.1);
+}
+
+/* Products Section */
 .products {
     padding: 40px 0;
     text-align: center;
-    overflow-x: hidden; /* Prevents horizontal overflow */
+    background-color: #e8f7f5; /* Light seafoam green */
+}
+
+.products h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #005f73; /* Dark teal */
 }
 
 .product-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 100%; /* Restricts width to prevent overflow */
 }
 
-/* Services Section for Mobile */
-.services {
-    padding: 1rem 0;
+.product-item {
     text-align: center;
-    background-color: #f9f9f9;
-    overflow-x: hidden; /* Prevents horizontal overflow */
 }
 
-/* Testimonials Section */
-.testimonials {
-    padding: 2rem 0;
-    background-color: #f1f1f1;
-    overflow-x: hidden; /* Prevents horizontal overflow */
+.product-item img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
 }
 
-/* Social Section */
-.social {
-    padding: 2rem 0;
+/* About Section */
+.about {
+    background-color: #f7f7f7;
+    padding: 40px 0;
     text-align: center;
-    background-color: #f4f4f4;
-    overflow-x: hidden; /* Prevents horizontal overflow */
 }
 
-/* Details Section for Mobile */
-.details {
-    padding: 20px 0;
-    background-color: #f5f5f5;
-    overflow-x: hidden; /* Prevents horizontal overflow */
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #2c3e50; /* Darker text color for contrast */
+}
+
+/* Contact Section */
+.contact {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #e8f7f5; /* Light seafoam green */
+}
+
+.contact form {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
 }
 
 /* Footer */
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #005f73; /* Dark teal */
+    color: #e0fbfc; /* Light color for contrast */
     text-align: center;
     padding: 15px 0;
+}
+
+/* Styles for Services Section on Mobile */
+.services {
+    padding: 1rem 0;
+    text-align: center;
+    background-color: #f1f5f4; /* Light blue */
+}
+
+.service-gallery {
+    display: block;
+    padding: 0 1rem;
+}
+
+.service-item {
+    margin-bottom: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.service-item img {
     width: 100%;
-    overflow-x: hidden; /* Prevents horizontal overflow */
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.service-item p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #333;
+}
+
+/* Styles for Testimonials Section */
+.testimonials {
+    padding: 2rem 0;
+    background-color: #f1f1f1;
+}
+.testimonials h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: bold;
+}
+.testimonial-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.testimonial-item {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.testimonial-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+.testimonial-item::before {
+    content: "“";
+    font-size: 4rem;
+    color: #007bff;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+.testimonial-item::after {
+    content: "”";
+    font-size: 4rem;
+    color: #007bff;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+.testimonial-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+.testimonial-item cite {
+    display: block;
+    font-size: 0.875rem;
+    color: #777;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.social {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column; /* Stacks the items vertically */
+    gap: 1rem; /* Space between each social link */
+    align-items: center; /* Centers the links */
+}
+
+/* Styling for Each Social Link */
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: #007bff; /* Default background color for all social links */
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #0056b3; /* Darker shade for hover */
 }
