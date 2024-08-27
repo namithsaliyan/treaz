@@ -22,7 +22,7 @@ body {
 }
 
 /* Navbar Styles */
-* Mobile Styles */
+/* Mobile Styles */
 @media screen and (max-width: 1023px) {
     .navbar {
         background-color: #333;
@@ -38,6 +38,7 @@ body {
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        flex-wrap: nowrap; /* Ensure content doesn't wrap */
     }
 
     .logo {
