@@ -75,3 +75,12 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', changeHeaderBackground);
     changeHeaderBackground(); // Call on page load
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+        menuToggle.classList.toggle('active');
+    });
+});
