@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
             review: review
         };
 
-        // Send POST request to the API
-        fetch('https://api.example.com/reviews', { // Replace with your API endpoint
+        // Send POST request to the Go API
+        fetch('https://review-x.up.railway.app/reviews', { // Updated API endpoint
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
