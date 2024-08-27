@@ -356,3 +356,41 @@ body {
 .detail-item a:hover {
     text-decoration: underline;
 }
+/* Write a Review Section */
+.write-review {
+    padding: 60px 0;
+    background-color: #f9f9f9; /* Light background color for contrast */
+    text-align: center; /* Center-align text */
+}
+
+.write-review .container {
+    max-width: 800px; /* Max width for the content */
+    margin: 0 auto; /* Center the container */
+}
+
+.write-review h2 {
+    font-size: 2.5em; /* Heading size */
+    color: #333; /* Darker text color for readability */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.write-review p {
+    font-size: 1.2em; /* Slightly larger text for the description */
+    color: #666; /* Lighter text color for description */
+    margin-bottom: 40px; /* Space below paragraph */
+}
+
+.write-review .cta-button {
+    display: inline-block; /* Make the button inline-block */
+    padding: 15px 30px; /* Padding for the button */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.1em; /* Button font size */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.write-review .cta-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
