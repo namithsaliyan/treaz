@@ -403,3 +403,30 @@ body {
     padding: 12px 25px; /* Slightly smaller padding for mobile button */
     font-size: 1em; /* Standard font size for button text */
 }
+/* Specific styles for the button in the Testimonials section */
+.testimonials .cta-button {
+    display: block;
+    padding: 0.5rem 0.75rem; /* Reduced padding for a narrower button */
+    background-color: #007bff; /* Primary color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.8rem; /* Smaller font size */
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 1.5rem auto; /* Centered with margin above and below */
+    max-width: 150px; /* Limit the maximum width */
+    width: 100%; /* Make it responsive */
+}
+
+.testimonials .cta-button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.testimonials .cta-button:active {
+    background-color: #004494; /* Even darker shade for active state */
+    transform: scale(1); /* Reset zoom effect */
+}
+
