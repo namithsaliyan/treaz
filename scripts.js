@@ -1,64 +1,77 @@
-// JavaScript to handle form submission
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contactForm');
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
+    const formData = new FormData(this);
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message')
+    };
 
-        // Create a new FormData object from the form
-        const formData = new FormData(this);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            message: formData.get('message')
-        };
+    fetch('https://gox-production-e708.up.railway.app/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(result => {
+        alert(result.message);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const gallery = document.querySelector('.gallery');
+    const items = document.querySelectorAll('.gallery-item');
 
-        // Send the form data to the server using fetch
-        fetch('https://gox-production-e708.up.railway.app/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            alert('Your message has been sent successfully!');
-            // Optionally clear the form here
-            form.reset();
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-            alert('There was an error sending your message. Please try again.');
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            gallery.scrollTo({
+                left: item.offsetLeft - (gallery.clientWidth / 2) + (item.clientWidth / 2),
+                behavior: 'smooth'
+            });
         });
     });
-
-    // JavaScript for dynamic navbar based on scroll behavior
-    const navbar = document.querySelector('.navbar');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
 });
 
-let lastScrollY = window.scrollY;
-const navbar = document.querySelector('.navbar');
+let lastScrollTop = 0;
+const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > lastScrollY) {
-    navbar.classList.remove('show');
-  } else {
-    navbar.classList.add('show');
-  }
-  lastScrollY = window.scrollY;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        header.classList.add('hidden');
+    } else {
+        // Scrolling up
+        header.classList.remove('hidden');
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
 });
 
-function toggleReferences() {
-  const refSections = document.getElementById('reference-sections');
-  refSections.classList.toggle('show');
-}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('header');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    function changeHeaderBackground() {
+        let index = sections.length;
+
+        while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+        navLinks.forEach(link => link.classList.remove('active'));
+        if (index >= 0) {
+            navLinks[index].classList.add('active');
+            const sectionBackground = sections[index].style.backgroundImage || '';
+            header.style.background = sectionBackground;
+        }
+    }
+
+    window.addEventListener('scroll', changeHeaderBackground);
+    changeHeaderBackground(); // Call on page load
+});
