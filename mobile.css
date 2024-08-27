@@ -22,77 +22,77 @@ body {
 }
 
 /* Navbar Styles */
-/* Mobile Styles */
 @media screen and (max-width: 1023px) {
     .navbar {
+        background-color: #333;
+        padding: 5px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .navbar-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 5px;
-        background-color: #333;
-        position: relative;
-        overflow: hidden;
+        width: 100%;
     }
 
     .logo {
         flex: 1;
-        text-align: center;
+        text-align: left;
     }
 
     .logo a {
         color: rgb(235, 235, 235);
         text-decoration: none;
         font-weight: bold;
-        font-size: 18px; /* Reduced font size */
-    }
-
-    .desktop-nav {
-        display: none;
+        font-size: 20px;
+        margin-left: 10px;
     }
 
     .reference-button {
         background-color: #555;
         color: #fff;
         border: none;
-        padding: 5px 10px; /* Reduced padding */
+        padding: 8px 12px;
         cursor: pointer;
-        font-size: 16px; /* Reduced font size */
+        font-size: 18px;
         border-radius: 5px;
         outline: none;
+        margin-right: 10px;
     }
 
     .reference-sections {
         display: none;
         position: absolute;
-        top: 50px; /* Adjusted to fit under the header */
+        top: 60px;
         right: 10px;
         background-color: #333;
-        width: 100%; /* Full width to fit screen */
-        max-height: 200px; /* Added max-height for scroll if needed */
-        overflow-y: auto; /* Enable vertical scrolling if content overflows */
-        padding: 5px;
-        box-sizing: border-box;
+        width: 250px;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1000;
     }
 
     .reference-sections ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
-        display: flex;
-        flex-wrap: wrap; /* Allows items to wrap onto the next line */
-        justify-content: space-around; /* Space items evenly */
     }
 
     .reference-sections li {
-        margin: 0; /* Removed margin to fit items in one line */
+        margin: 10px 0;
     }
 
     .reference-sections a {
         color: #fff;
         text-decoration: none;
-        font-size: 14px; /* Reduced font size */
-        padding: 5px; /* Padding for better touch experience */
-        display: inline-block; /* Ensure padding is applied correctly */
+        font-size: 16px;
     }
 
     .reference-sections a:hover {
