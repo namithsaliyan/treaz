@@ -1,17 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
+    const navbar = document.getElementById('navbar');
 
     hamburger.addEventListener('click', function() {
         navMenu.classList.toggle('active');
+        navbar.classList.toggle('active');
     });
 
     // Close menu when a link is clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
+            navbar.classList.remove('active');
         });
     });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+            navMenu.classList.remove('active');
+            navbar.classList.remove('active');
+        }
+    });
+
+    // Your existing JavaScript code here...
+});
 
     // Your existing JavaScript
     document.getElementById('contactForm').addEventListener('submit', function(event) {
