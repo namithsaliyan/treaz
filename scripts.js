@@ -57,3 +57,8 @@ window.addEventListener('scroll', () => {
   }
   lastScrollY = window.scrollY;
 });
+
+function toggleReferences() {
+  const refSections = document.getElementById('reference-sections');
+  refSections.classList.toggle('show');
+}
