@@ -18,10 +18,11 @@
     <!-- Header / Navigation -->
     <header class="navbar">
         <div class="container">
+            <!-- Desktop Navigation -->
             <div class="logo">
                 <a href="#" style="color: rgb(235, 235, 235); text-decoration: none; font-weight: bold;">𝐓𝐑𝐄𝐀𝐙</a>
             </div>
-            <nav>
+            <nav class="desktop-nav">
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Products</a></li>
@@ -29,11 +30,29 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#social">Social</a></li>
-                    <li><a href="#details">Details</a></li> <!-- New link added -->
+                    <li><a href="#details">Details</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#write-review">Write a Review</a></li>
                 </ul>
             </nav>
+
+            <!-- Mobile Navigation Button -->
+            <button class="reference-button" onclick="toggleReferences()">☰</button>
+
+            <!-- Mobile Reference Sections (Initially hidden) -->
+            <div class="reference-sections" id="reference-sections">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#social">Social</a></li>
+                    <li><a href="#details">Details</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#write-review">Write a Review</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -159,41 +178,13 @@
                     <span>Facebook</span>
                 </a>
                 <a href="https://twitter.com/treaz" class="social-link" title="Twitter">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/70px-X_logo_2023.svg.png" alt="Twitter">
-                    <span>X</span>
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+                    <span>Twitter</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Details Section -->
-    <section id="details" class="details">
-        <div class="container">
-            <h2>Our Details</h2>
-            <div class="details-info">
-                <div class="detail-item">
-                    <h3>Contact Email</h3>
-                    <p><a href="mailto:info@treaz.com">wecare@treaz.in</a></p>
-                </div>
-                <div class="detail-item">
-                    <h3>Phone Number</h3>
-                    <p><a href="tel:+1234567890">+123 456 7890</a></p>
-                </div>
-                <div class="detail-item">
-                    <h3>License Information</h3>
-                    <p>License Number: ABC123456</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Write a Review Section -->
-    <section id="write-review" class="write-review">
-        <div class="container">
-            <h2>Write a Review</h2>
-            <p>We value your feedback. Please share your experience with us!</p>
-            <a href="review.html" class="cta-button">Write a Review</a>
-        </div>
-    </section>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -201,7 +192,16 @@
         </div>
     </footer>
 
-    <!-- External JavaScript -->
-    <script src="scripts.js"></script>
+    <!-- JavaScript -->
+    <script>
+        function toggleReferences() {
+            var sections = document.getElementById('reference-sections');
+            if (sections.style.display === 'none' || sections.style.display === '') {
+                sections.style.display = 'block';
+            } else {
+                sections.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
