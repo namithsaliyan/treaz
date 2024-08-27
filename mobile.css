@@ -46,6 +46,7 @@ body {
     border: none;
     color: #fff;
     cursor: pointer;
+    z-index: 1002; /* Ensure it's above the nav-menu */
 }
 
 /* Navigation menu */
@@ -53,12 +54,15 @@ body {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 80%;
+    width: 100%;
     height: 100vh;
     background-color: #100c01;
     transition: 0.3s;
     z-index: 1001;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .nav-menu.active {
@@ -67,11 +71,12 @@ body {
 
 .nav-links {
     list-style: none;
-    padding-top: 50px;
+    padding: 0;
 }
 
 .nav-links li {
-    margin: 10px 0;
+    margin: 20px 0;
+    text-align: center;
 }
 
 .nav-links a {
@@ -80,14 +85,8 @@ body {
     text-decoration: none;
     color: #d1cfcf;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
-
-/* Hide the regular navigation on mobile */
-.navbar .container nav:not(.nav-menu) {
-    display: none;
-}
-
 /* Background Image */
 .hero-background {
     background-image: url('https://wallpaperaccess.com/full/562838.jpg');
