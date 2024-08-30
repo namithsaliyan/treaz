@@ -7,17 +7,55 @@
     <link rel="stylesheet" href="review.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="brand">
+                <a href="#">𝐓𝐑𝐄𝐀𝐙</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Review Section -->
     <section id="review" class="review-section">
         <div class="container">
             <h2>Write a Review</h2>
             <form id="reviewForm">
                 <input type="text" name="name" id="reviewName" placeholder="Your Name" required>
                 <textarea name="review" id="reviewText" placeholder="Your Review" rows="4" required></textarea>
+                
+                <!-- Rating Stars -->
+                <div class="rating-container">
+                    <label for="rating" class="rating-label">Rating:</label>
+                    <div class="rating-stars">
+                        <input type="radio" id="star5" name="rating" value="5"><label class="star" for="star5">&#9733;</label>
+                        <input type="radio" id="star4" name="rating" value="4"><label class="star" for="star4">&#9733;</label>
+                        <input type="radio" id="star3" name="rating" value="3"><label class="star" for="star3">&#9733;</label>
+                        <input type="radio" id="star2" name="rating" value="2"><label class="star" for="star2">&#9733;</label>
+                        <input type="radio" id="star1" name="rating" value="1"><label class="star" for="star1">&#9733;</label>
+                    </div>
+                </div>
+
                 <button type="submit" class="submit-review">Submit Review</button>
             </form>
-            <div id="reviewMessage" class="review-message"></div>
+            <div id="reviewMessage" class="review-message hidden"></div>
         </div>
     </section>
+
+    <!-- See All Reviews Section -->
+    <section class="see-reviews">
+        <div class="container">
+            <a href="reviews.html" class="cta-button">See All Reviews</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Treaz. All rights reserved.</p>
+    </footer>
 
     <script src="review.js"></script>
 </body>
