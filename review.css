@@ -1,122 +1,144 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    background: #f5f7fa;
+    color: #2d3436;
     box-sizing: border-box;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Header Styles */
-header.navbar {
-    background: #151718;
-    color: #ecf0f1;
-    padding: 15px 20px;
-    position: fixed;
-    width: 100%;
+/* Header / Navigation */
+.navbar {
+    background: linear-gradient(135deg, #0099ff, #00cc99);
+    color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: sticky;
     top: 0;
-    left: 0;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease, padding 0.3s ease;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-header.navbar.scrolled {
-    background: #34495e;
-    padding: 10px 20px;
+.navbar.scrolled {
+    background-color: rgba(0, 153, 255, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-header .container {
+.navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
 }
 
-header .logo a {
-    font-size: 16px;
-    text-decoration: none;
-    color: #ecf0f1;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-header .logo a:hover {
-    background-color: #3498db;
+.navbar .logo a {
     color: #ffffff;
-    transform: scale(1.05);
-}
-
-header .brand a {
-    font-size: 32px;
     text-decoration: none;
-    color: #ecf0f1;
-    font-weight: 700;
-    text-align: center;
-    display: block;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out;
 }
 
-header .brand a:hover {
-    color: #f39c12;
+.navbar .logo a:hover {
+    color: #00cc99;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.8rem 1.4rem;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    background-color: #ffffff;
+    color: #0099ff;
     transform: scale(1.05);
 }
 
-/* Scroll Effect for Header */
-@keyframes slideIn {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
+/* Back Button Styling */
+.nav-links .cta-button {
+    background-color: #ffffff;
+    color: #0099ff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 1.4rem;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-header {
-    animation: slideIn 0.5s ease-out;
+.nav-links .cta-button:hover {
+    background-color: #f0f0f0;
+    color: #007acc;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* Modern Button Styles */
+.cta-button {
+    background-color: #6c5ce7;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 12px 24px rgba(108, 92, 231, 0.3);
+    transition: all 0.3s ease;
+}
 
-    header .logo a, 
-    header .brand a {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
+.cta-button:hover {
+    background-color: #4b4deb;
+    box-shadow: 0 16px 32px rgba(75, 77, 235, 0.4);
+    transform: translateY(-3px);
+}
 
-    header .brand a {
-        font-size: 28px;
-    }
+.cta-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 8px 16px rgba(75, 77, 235, 0.2);
 }
 
 /* Review Section Styles */
 .review-section {
     background: #ffffff;
-    padding: 60px 20px;
-    margin-top: 80px; /* Space for fixed header */
-    border-radius: 15px;
-    max-width: 600px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    margin: 80px auto 30px;
-    animation: fadeIn 0.8s ease-out;
+    padding: 50px 40px;
+    margin-top: 100px; /* Adjust space for fixed header */
+    border-radius: 20px;
+    max-width: 700px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    margin: 100px auto 40px;
+    animation: popUp 0.6s ease-out;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes popUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-    color: #2c3e50;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #2d3436;
     font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Form Styles */
@@ -127,42 +149,36 @@ form {
 input[type="text"],
 textarea {
     width: 100%;
-    padding: 15px;
+    padding: 18px;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    box-sizing: border-box;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     font-size: 16px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: #f9f9f9;
+    transition: box-shadow 0.3s ease;
+    background-color: #f0f3f5;
+    color: #2d3436;
 }
 
 input[type="text"]:focus,
 textarea:focus {
-    border-color: #3498db;
     outline: none;
-    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+    box-shadow: 0 8px 24px rgba(108, 92, 231, 0.3);
 }
 
 /* Rating Styles */
 .rating-container {
-    margin-bottom: 20px;
-}
-
-.rating-label {
-    font-size: 18px;
-    margin-bottom: 10px;
-    display: block;
-    color: #333;
-    font-weight: 600;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .rating-stars {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-start;
-    max-width: 200px;
-    margin: auto;
+    max-width: 220px;
+    gap: 5px;
 }
 
 .rating-stars input[type="radio"] {
@@ -171,47 +187,48 @@ textarea:focus {
 
 .rating-stars label.star {
     font-size: 36px;
-    color: #ddd;
+    color: #ccc;
     cursor: pointer;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .rating-stars input[type="radio"]:checked ~ label.star {
-    color: #f39c12;
+    color: #fdcb6e;
 }
 
 .rating-stars label.star:hover,
 .rating-stars label.star:hover ~ label.star {
-    color: #f39c12;
-    transform: scale(1.2);
+    color: #fdcb6e;
+    transform: scale(1.15);
 }
 
 .rating-stars label.star:active {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* Button Styles */
 button.submit-review {
-    background-color: #3498db;
+    background-color: #0984e3;
     color: #ffffff;
     border: none;
-    padding: 14px 24px;
+    padding: 16px 28px;
     font-size: 18px;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
     width: 100%;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 132, 227, 0.2);
 }
 
 button.submit-review:hover {
-    background-color: #2980b9;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: #007bb5;
+    box-shadow: 0 12px 24px rgba(0, 123, 181, 0.3);
+    transform: translateY(-2px);
 }
 
 button.submit-review:active {
-    transform: scale(0.98);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+    box-shadow: 0 8px 16px rgba(0, 123, 181, 0.2);
 }
 
 /* Review Message Styles */
@@ -219,17 +236,18 @@ button.submit-review:active {
     margin-top: 20px;
     font-size: 18px;
     font-weight: 500;
+    text-align: center;
     transition: opacity 0.5s ease, transform 0.3s ease;
 }
 
 .review-message.success {
-    color: #27ae60;
+    color: #00b894;
     opacity: 1;
     transform: translateY(0);
 }
 
 .review-message.error {
-    color: #e74c3c;
+    color: #d63031;
     opacity: 1;
     transform: translateY(0);
 }
@@ -241,60 +259,58 @@ button.submit-review:active {
 
 /* See All Reviews Section */
 .see-reviews {
-    margin: 40px 0;
+    margin: 50px 0;
     text-align: center;
 }
 
 .see-reviews .cta-button {
-    background-color: #e67e22;
+    background-color: #fd79a8;
     color: #ffffff;
-    text-decoration: none;
-    padding: 14px 24px;
-    border-radius: 25px;
+    padding: 14px 28px;
+    border-radius: 30px;
     font-size: 16px;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(253, 121, 168, 0.2);
 }
 
 .see-reviews .cta-button:hover {
-    background-color: #d35400;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: #e84393;
+    box-shadow: 0 12px 24px rgba(232, 67, 147, 0.3);
 }
 
 .see-reviews .cta-button:active {
-    transform: scale(0.98);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+    box-shadow: 0 8px 16px rgba(232, 67, 147, 0.2);
 }
 
 /* Footer Styles */
 footer {
-    background: #151718;
-    color: #ecf0f1;
-    padding: 20px 0;
+    background: #2d3436;
+    color: #ffffff;
+    padding: 30px 0;
     text-align: center;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
     bottom: 0;
     width: 100%;
-    margin-top: 30px;
     font-size: 16px;
+    margin-top: 40px;
 }
 
-/* Responsive Layout Enhancements */
+/* Responsive Enhancements */
 @media (max-width: 768px) {
-    .review-section {
-        padding: 30px 15px;
-        margin-top: 60px; /* Adjust space for smaller screens */
+    header .container {
+        flex-direction: column;
+        align-items: center;
     }
 
-    h2 {
-        font-size: 24px;
+    .review-section {
+        padding: 40px 20px;
     }
 
     button.submit-review {
         font-size: 16px;
-        padding: 12px 20px;
+        padding: 14px 24px;
     }
 }
 
@@ -303,27 +319,21 @@ footer {
         padding: 10px 15px;
     }
 
-    header .logo a,
-    header .brand a {
-        font-size: 12px;
-        padding: 8px 10px;
-    }
-
-    header .brand a {
+    header .brand {
         font-size: 24px;
     }
 
     .review-section {
-        padding: 20px 10px;
+        padding: 30px 15px;
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     button.submit-review {
         font-size: 14px;
-        padding: 10px 16px;
+        padding: 12px 20px;
     }
 
     footer {
