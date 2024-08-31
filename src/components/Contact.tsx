@@ -4,9 +4,9 @@ const Contact: React.FC = () => {
   const socialLinks = [
     { name: 'Email', icon: 'https://cdn-icons-png.flaticon.com/512/732/732200.png', url: 'mailto:wecare@treaz.in' },
     { name: 'WhatsApp', icon: 'https://cdn-icons-png.flaticon.com/512/733/733585.png', url: 'https://wa.me/1234567890' },
-    { name: 'Instagram', icon: 'https://cdn-icons-png.flaticon.com/512/733/733614.png', url: 'https://instagram.com/treaz' },
-    { name: 'Facebook', icon: 'https://cdn-icons-png.flaticon.com/512/733/733547.png', url: 'https://facebook.com/treaz' },
-    { name: 'X', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/70px-X_logo_2023.svg.png', url: 'https://twitter.com/treaz' },
+    { name: 'Instagram', icon: 'https://cdn-icons-png.flaticon.com/512/733/733614.png', url: 'https://instagram.com/treaz.in' },
+    { name: 'Facebook', icon: 'https://cdn-icons-png.flaticon.com/512/733/733547.png', url: 'https://facebook.com/treaz.in' },
+    { name: 'X', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/70px-X_logo_2023.svg.png', url: 'https://twitter.com/treaz.in' },
   ];
 
   return (
