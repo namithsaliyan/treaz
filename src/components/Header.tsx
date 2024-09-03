@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import { logo } from '../utils/data';
 
 const navigationItems = [
-  'HOME', 'PRODUCTS', 'SERVICES', 'TESTIMONIALS', 'DETAILS', 'CONTACT'
+  { name: 'HOME', path: '/' },
+  { name: 'PRODUCTS', path: '/products' },
+  { name: 'SERVICES', path: '/services' },
+  { name: 'TESTIMONIALS', path: '/testimonials' },
+  { name: 'DETAILS', path: '/details' },
+  { name: 'CONTACT', path: '/contact' }
 ];
 
 const Header: React.FC = () => {
@@ -35,15 +40,15 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex">
             <ul className="flex space-x-6 font-bold text-lg">
-              {navigationItems.map(item => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase().replace(' ', '-')}`}
+              {navigationItems.map(({ name, path }) => (
+                <li key={name}>
+                  <Link
+                    to={path}
                     className="relative group text-white hover:text-yellow-300 transition-colors duration-300 uppercase tracking-wide"
                   >
-                    {item}
+                    {name}
                     <span className="absolute left-0 -bottom-1 w-full h-1 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-left"></span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -54,15 +59,15 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-2 font-bold bg-white bg-opacity-90 text-black rounded-lg shadow-lg transition-transform transform translate-y-0 ease-in-out duration-300">
             <ul className="flex flex-col space-y-2 p-4">
-              {navigationItems.map(item => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase().replace(' ', '-')}`}
+              {navigationItems.map(({ name, path }) => (
+                <li key={name}>
+                  <Link
+                    to={path}
                     className="block py-2 px-4 text-lg hover:bg-gray-200 rounded-lg transition-colors duration-300"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {item}
-                  </a>
+                    {name}
+                  </Link>
                 </li>
               ))}
             </ul>
