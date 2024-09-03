@@ -15,9 +15,6 @@ const HomePage: React.FC = () => {
       <section id="products" className="px-4 md:px-0">
         <HomeProducts />
       </section>
-      <section id="custom-bottles" className="px-4 md:px-0">
-        <CustomizedBottle />
-      </section>
       <section id="services" className="px-4 md:px-0">
         <Services />
       </section>
