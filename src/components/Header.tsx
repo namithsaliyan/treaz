@@ -32,7 +32,7 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:block"> 
             <ul className="flex space-x-8 font-MontBold">
-              {['HOME', 'PRODUCTS', 'CUSTOM-BOTTLES', 'SERVICES', 'TESTIMONIALS', 'DETAILS','CONTACT'].map((item) => (
+              {['HOME', 'PRODUCTS', 'SERVICES', 'TESTIMONIALS', 'DETAILS','CONTACT'].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(' ', '-')}`}
@@ -50,7 +50,7 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-2 font-MontBold ">
             <ul className="flex flex-col space-y-2">
-              {['HOME', 'PRODUCTS', 'CUSTOM-BOTTLES', 'SERVICES', 'TESTINOMIALS', 'DETAILS','CONTACT'].map((item) => (
+              {['HOME', 'PRODUCTS', 'SERVICES', 'TESTIMONIALS', 'DETAILS','CONTACT'].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(' ', '-')}`}
