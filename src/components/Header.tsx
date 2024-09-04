@@ -5,7 +5,7 @@ import { logo } from '../utils/data';
 const navigationItems = [
   { name: 'HOME', path: '/' },
   { name: 'PRODUCTS', path: '/products' },
-  { name: 'SERVICES', path: '/#services' },
+  { name: 'SERVICES', path: '/HOME#services' },
   { name: 'TESTIMONIALS', path: '/#testimonials' },
   { name: 'DETAILS', path: '/#details' },
   { name: 'CONTACT', path: '/#contact' }
