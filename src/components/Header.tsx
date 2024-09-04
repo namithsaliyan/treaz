@@ -5,10 +5,10 @@ import { logo } from '../utils/data';
 const navigationItems = [
   { name: 'HOME', path: '/' },
   { name: 'PRODUCTS', path: '/products', isExternal: true },
-  { name: 'SERVICES', path: '#services' },
-  { name: 'TESTIMONIALS', path: '#testimonials' },
-  { name: 'DETAILS', path: '#details' },
-  { name: 'CONTACT', path: '#contact' }
+  { name: 'SERVICES', path: 'HOME#services' },
+  { name: 'TESTIMONIALS', path: 'HOME#testimonials' },
+  { name: 'DETAILS', path: 'HOME#details' },
+  { name: 'CONTACT', path: 'HOME#contact' }
 ];
 
 const Header: React.FC = () => {
@@ -19,17 +19,17 @@ const Header: React.FC = () => {
   return (
     <header className="bg-gradient-to-r from-blue-900 via-purple-700 to-pink-600 text-white shadow-lg fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-3">
+        <div className="flex justify-between items-center py-2">
           <div className="logo">
             <Link to="/" className="flex items-center space-x-2 group">
-              <img src={logo} alt="Company Logo" className="h-12 w-auto transition-transform transform group-hover:scale-110" />
+              <img src={logo} alt="Company Logo" className="h-10 w-auto transition-transform transform group-hover:scale-110" />
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-3 rounded-md hover:bg-opacity-30 hover:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-colors duration-300"
+            className="md:hidden p-2 rounded-md hover:bg-opacity-30 hover:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-colors duration-300"
             aria-label="Toggle menu"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex">
-            <ul className="flex space-x-6 font-bold text-lg">
+            <ul className="flex space-x-4 font-semibold text-sm">
               {navigationItems.map(({ name, path, isExternal }) => (
                 <li key={name}>
                   {isExternal ? (
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
                       className="relative group text-white hover:text-yellow-300 transition-colors duration-300 uppercase tracking-wide"
                     >
                       {name}
-                      <span className="absolute left-0 -bottom-1 w-full h-1 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-left"></span>
+                      <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-left"></span>
                     </a>
                   ) : (
                     <Link
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
                       className="relative group text-white hover:text-yellow-300 transition-colors duration-300 uppercase tracking-wide"
                     >
                       {name}
-                      <span className="absolute left-0 -bottom-1 w-full h-1 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-left"></span>
+                      <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-left"></span>
                     </Link>
                   )}
                 </li>
@@ -67,14 +67,14 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-2 font-bold bg-white bg-opacity-90 text-black rounded-lg shadow-lg transition-transform transform translate-y-0 ease-in-out duration-300">
+          <nav className="md:hidden mt-2 font-semibold bg-white bg-opacity-90 text-black rounded-lg shadow-lg transition-transform transform translate-y-0 ease-in-out duration-300">
             <ul className="flex flex-col space-y-2 p-4">
               {navigationItems.map(({ name, path, isExternal }) => (
                 <li key={name}>
                   {isExternal ? (
                     <a
                       href={path}
-                      className="block py-2 px-4 text-lg hover:bg-gray-200 rounded-lg transition-colors duration-300"
+                      className="block py-2 px-4 text-base hover:bg-gray-200 rounded-lg transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {name}
@@ -82,7 +82,7 @@ const Header: React.FC = () => {
                   ) : (
                     <Link
                       to={path}
-                      className="block py-2 px-4 text-lg hover:bg-gray-200 rounded-lg transition-colors duration-300"
+                      className="block py-2 px-4 text-base hover:bg-gray-200 rounded-lg transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {name}
