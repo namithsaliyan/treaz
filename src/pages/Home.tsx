@@ -34,4 +34,10 @@ const HomePage: React.FC = () => {
   );
 };
 
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 export default HomePage;
