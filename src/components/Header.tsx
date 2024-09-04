@@ -1,25 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { logo } from '../utils/data';
-import '../styles/Header.css';  // Import the CSS file here
 
 const navigationItems = [
   { name: 'HOME', path: '/' },
   { name: 'PRODUCTS', path: '/products', isExternal: true },
-  { name: 'SERVICES', path: '/#services' },
-  { name: 'TESTIMONIALS', path: '/all-reviews' },
-  { name: 'DETAILS', path: '/#details' },
-  { name: 'CONTACT', path: '/#contact' }
+  { name: 'SERVICES', path: 'HOME#services' },
+  { name: 'TESTIMONIALS', path: 'HOME#testimonials' },
+  { name: 'DETAILS', path: 'HOME#details' },
+  { name: 'CONTACT', path: 'HOME#contact' }
 ];
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLogoLoaded, setIsLogoLoaded] = useState(false);
-
-  useEffect(() => {
-    // Trigger the logo animation on component mount
-    setIsLogoLoaded(true);
-  }, []);
 
   const toggleMenu = () => setIsMenuOpen(prevState => !prevState);
 
@@ -27,7 +20,7 @@ const Header: React.FC = () => {
     <header className="bg-gradient-to-r from-blue-900 via-purple-700 to-pink-600 text-white shadow-lg fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-2">
-          <div className={`logo ${isLogoLoaded ? 'logo-animate' : ''}`}>
+          <div className="logo">
             <Link to="/" className="flex items-center space-x-2 group">
               <img src={logo} alt="Company Logo" className="h-10 w-auto transition-transform transform group-hover:scale-110" />
             </Link>
