@@ -1,4 +1,4 @@
-export const bg = require('../assets/images/image_treaz.png');
+export const bg = require('../assets/images/xx.png');
 export const bg2 = require('../assets/images/bgrnd2.jpg');
 export const banner = require('../assets/images/banner.png');
 export const logo = require('../assets/images/logoTREAZ.png');
