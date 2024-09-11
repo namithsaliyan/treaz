@@ -6,7 +6,7 @@ const navigationItems = [
   { name: 'HOME', path: '/' },
   { name: 'PRODUCTS', path: '/products', isExternal: true },
   { name: 'SERVICES', path: '../components/Services' },
-  { name: 'TESTIMONIALS', path: '../components/testimonials' },
+  { name: 'TESTIMONIALS', path: '/#testimonials' },
   { name: 'DETAILS', path: '../components/details' },
   { name: 'CONTACT', path: '../components/contact' }
 ];
