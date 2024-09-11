@@ -14,7 +14,7 @@ const Banner: React.FC = () => {
       
       <div className="relative z-20 text-center px-4 sm:px-8 lg:px-16">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-MontBold mb-4 leading-tight">
-          Experience the Essence of Pure Hydration
+        Welcome to TREAZ.in - Pure Drinking Water
         </h1>
         <p className="text-lg sm:text-md md:text-xl lg:text-2xl mb-8 font-MontRegular">
           Our mineral water is sourced from the finest natural springs, delivering a refreshing taste that quenches your thirst and rejuvenates your spirit.
