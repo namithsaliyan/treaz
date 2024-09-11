@@ -5,10 +5,10 @@ import { logo } from '../utils/data';
 const navigationItems = [
   { name: 'HOME', path: '/' },
   { name: 'PRODUCTS', path: '/products', isExternal: true },
-  { name: 'SERVICES', path: 'HOME#services' },
-  { name: 'TESTIMONIALS', path: 'HOME#testimonials' },
-  { name: 'DETAILS', path: 'HOME#details' },
-  { name: 'CONTACT', path: 'HOME#contact' }
+  { name: 'SERVICES', path: '../components/Services' },
+  { name: 'TESTIMONIALS', path: '../components/testimonials' },
+  { name: 'DETAILS', path: '../components/details' },
+  { name: 'CONTACT', path: '../components/contact' }
 ];
 
 const Header: React.FC = () => {
