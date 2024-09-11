@@ -1,28 +1,28 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { bg } from '../utils/data';  
 
-const Banner = () => {
+const Banner: React.FC = () => {
   return (
-    <section className="bg-[#b8e0d2] min-h-screen flex flex-col justify-start items-center p-8">
-      <div className="w-full max-w-6xl flex justify-between items-center">
-        <div className="flex-1">
-          <img src="/api/placeholder/200/400" alt="Decorative water bottles" className="object-contain h-96" />
-        </div>
-        <div className="flex-1 text-center">
-          <h1 className="text-4xl font-bold mb-4 text-gray-800">
-            Welcome to TREAZ - Pure Drinking Water
-          </h1>
-          <p className="text-lg mb-6 text-gray-600 max-w-md mx-auto">
-            Discover the finest water experience with TREAZ. Our mission is to provide 
-            the purest and most refreshing drinking water to households and
-          </p>
-          <Button variant="secondary" className="bg-gray-800 text-white hover:bg-gray-700">
-            Explore More
-          </Button>
-        </div>
-        <div className="flex-1 flex justify-end">
-          <img src="/api/placeholder/200/400" alt="Decorative water bottles" className="object-contain h-96" />
-        </div>
+    <section id="home" className="relative h-screen flex flex-col items-center justify-center text-white">
+      <div 
+        className="absolute inset-0 bg-cover bg-center z-0" 
+        style={{ backgroundImage: `url(${bg})` }} 
+      ></div>
+      
+      <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+      
+      <div className="relative z-20 text-center px-4 sm:px-8 lg:px-16">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-MontBold mb-4 leading-tight">
+        Welcome to TREAZ - Pure Drinking Water
+        </h1>
+        <p className="text-lg sm:text-md md:text-xl lg:text-2xl mb-8 font-MontRegular">
+          Our mineral water is sourced from the finest natural springs, delivering a refreshing taste that quenches your thirst and rejuvenates your spirit.
+        </p>
+        
+        <Link to="/products" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 sm:py-3 sm:px-8 rounded shadow-lg transition duration-300 transform hover:scale-105">
+          Shop Now
+        </Link>
       </div>
     </section>
   );
