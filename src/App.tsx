@@ -7,11 +7,13 @@ import Products from './pages/Products';
 import About from './components/About';
 import AllReviews from './pages/AllReviews';
 import WriteReview from './pages/WriteReview';
+import { Analytics } from "@vercel/analytics/react"
 
 const App: React.FC = () => {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
+      <Analytics />
         <Header />
         <main className="flex-grow bg-gradient-to-b from-purple-100 via-pink-100 to-blue-100">
           <Routes>

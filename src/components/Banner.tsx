@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { bg } from '../utils/data';
+ 
 const Banner: React.FC = () => {
   const isMobile = window.innerWidth <= 768;
   const bgImage = isMobile
-    ? 'https://tse1.mm.bing.net/th?id=OIG1.jK5VIMmMZNBfSPOVQ0Yr&pid=ImgGn'
-    : 'https://tse1.mm.bing.net/th?id=OIG1.jK5VIMmMZNBfSPOVQ0Yr&pid=ImgGn';
+    ? bg
+    : bg;
 
   return (
     <section
