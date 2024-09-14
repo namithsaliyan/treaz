@@ -6,7 +6,7 @@ const Banner: React.FC = () => {
   // Determine the screen size
   const isMobile = window.innerWidth <= 768;
   const bgImage = isMobile
-    ? 'https://www.pexels.com/photo/woman-drinking-water-from-glass-bottle-3124674/'
+    ? 'https://images.pexels.com/photos/3124674/pexels-photo-3124674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
     : bg;
 
   return (
