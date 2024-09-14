@@ -31,7 +31,6 @@ const Header: React.FC = () => {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-      // Clear the state to prevent scrolling on subsequent renders
       navigate('/', { replace: true, state: {} });
     }
   }, [location, navigate]);
@@ -46,7 +45,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg fixed top-0 left-0 w-full z-50 mb-4 transition-all duration-300 ease-in-out">
+    <header className="bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-md sticky top-0 left-0 w-full z-50 mb-4 transition-transform duration-300 ease-in-out">
       <div className="container mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
           <div className="logo">
@@ -57,6 +56,7 @@ const Header: React.FC = () => {
 
           <button
             onClick={toggleMenu}
+            aria-label="Toggle menu"
             className="md:hidden p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-400 transition-transform transform duration-300 ease-in-out"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -70,6 +70,7 @@ const Header: React.FC = () => {
                 <li key={name} className="group relative">
                   <button
                     onClick={() => handleNavigation(name.toLowerCase())}
+                    aria-label={name}
                     className="flex items-center space-x-2 hover:text-yellow-300 transition-transform duration-300 ease-in-out relative"
                   >
                     <span className="text-xl">{icon}</span>
@@ -89,6 +90,7 @@ const Header: React.FC = () => {
                 <li key={name} className="group relative">
                   <button
                     onClick={() => handleNavigation(name.toLowerCase())}
+                    aria-label={name}
                     className="flex items-center space-x-2 px-4 py-2 text-sm hover:bg-gray-800 rounded transition-transform duration-300 ease-in-out"
                   >
                     <span className="text-lg">{icon}</span>
