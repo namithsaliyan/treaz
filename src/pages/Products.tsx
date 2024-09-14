@@ -54,7 +54,7 @@ const Products: React.FC = () => {
   };
 
   return (
-    <section id="products" className="py-8 bg-green-50">
+    <section id="products" className="py-8 bg-green-50 pt-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl mb-8 text-center font-MontBold text-green-800">Our Products</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

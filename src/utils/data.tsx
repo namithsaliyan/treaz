@@ -1,4 +1,4 @@
-export const bg = require('../assets/images/bgrnd.jpg');
+export const bg = 'https://www.bisleri.com/images/home-banner-slider/bisleri-banner.webp';
 export const bg2 = require('../assets/images/bgrnd2.jpg');
 export const banner = require('../assets/images/banner.png');
 export const logo = require('../assets/images/logo.jpeg');

@@ -9,26 +9,26 @@ import Contact from '../components/Contact';
 
 const HomePage: React.FC = () => {
   return (
-    <div className="overflow-x-hidden"> 
-      <section id="home">
+    <div className="overflow-x-hidden">
+      <section id="home" className="pt-16"> {/* Adjust padding-top to prevent content from being hidden by header */}
         <Banner />
       </section>
-      <section id="products" className="px-4 md:px-0">
+      <section id="products" className="px-4 md:px-0 pt-16"> {/* Adjust padding-top to prevent content from being hidden by header */}
         <HomeProducts />
       </section>
-      <section id="services" className="px-4 md:px-0">
+      <section id="services" className="px-4 md:px-0 pt-16"> {/* Adjust padding-top to prevent content from being hidden by header */}
         <Services />
       </section>
-      <section id="about" className="px-4 md:px-0">
+      <section id="about" className="px-4 md:px-0 pt-16"> {/* Adjust padding-top to prevent content from being hidden by header */}
         <About />
       </section>
-      <section id="testimonials" className="px-4 md:px-0">
+      <section id="testimonials" className="px-4 md:px-0 pt-16"> {/* Adjust padding-top to prevent content from being hidden by header */}
         <Testimonials />
       </section>
-      <section id="details" className="px-4 md:px-0">
+      <section id="details" className="px-4 md:px-0 pt-16"> {/* Adjust padding-top to prevent content from being hidden by header */}
         <Details />
       </section>
-      <section id="contact" className="px-4 md:px-0">
+      <section id="contact" className="px-4 md:px-0 pt-16"> {/* Adjust padding-top to prevent content from being hidden by header */}
         <Contact />
       </section>
     </div>
