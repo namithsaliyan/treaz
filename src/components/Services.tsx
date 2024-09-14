@@ -1,30 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { bottlelogo } from '../utils/data';
 
+const categories = [
+  'All',
+  'Weddings',
+  'Conferences',
+  'Events',
+  'Hotels',
+  'Healthcare'
+];
+
+const services = [
+  { name: 'Custom Branded Bottle 1', image: bottlelogo, category: 'Weddings' },
+  { name: 'Custom Branded Bottle 2', image: bottlelogo, category: 'Conferences' },
+  { name: 'Custom Branded Bottle 3', image: bottlelogo, category: 'Events' },
+  { name: 'Custom Branded Bottle 4', image: bottlelogo, category: 'Hotels' },
+  { name: 'Custom Branded Bottle 5', image: bottlelogo, category: 'Healthcare' },
+];
+
 const Services: React.FC = () => {
-  const services = [
-    { name: 'Custom Branded Bottle 1', image: bottlelogo },
-    { name: 'Custom Branded Bottle 2', image: bottlelogo },
-    { name: 'Custom Branded Bottle 3', image: bottlelogo },
-    { name: 'Custom Branded Bottle 4', image: bottlelogo },
-    { name: 'Custom Branded Bottle 5', image: bottlelogo },
-  ];
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const filteredServices = selectedCategory === 'All'
+    ? services
+    : services.filter(service => service.category === selectedCategory);
 
   return (
-    <section id="services" className="py-16">
+    <section id="services" className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center  text-indigo-800">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-indigo-800">
           Our Services
         </h2>
         <p className="text-lg md:text-xl text-center mb-12 text-gray-700 max-w-3xl mx-auto">
           We specialize in customizing packed water with your own brand for a unique touch. 
           Enhance your brand visibility and offer a personalized experience to your customers.
         </p>
+        
+        <div className="flex justify-center mb-8">
+          {categories.map(category => (
+            <button
+              key={category}
+              className={`px-4 py-2 mx-2 rounded-lg font-medium transition-colors duration-300 ${selectedCategory === category ? 'bg-indigo-800 text-white' : 'bg-white text-indigo-800 border border-indigo-800'}`}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
         <div className="overflow-x-auto pb-4 scrollbar-hide">
           <div className="flex space-x-6 md:space-x-8 min-w-max">
-            {services.map((service, index) => (
+            {filteredServices.map((service, index) => (
               <div key={index} className="w-64 md:w-80 flex-shrink-0">
-                <div className="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
+                <div className="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:shadow-xl hover:scale-105">
                   <img 
                     src={service.image} 
                     alt={service.name} 
