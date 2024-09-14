@@ -36,11 +36,11 @@ const Services: React.FC = () => {
           Enhance your brand visibility and offer a personalized experience to your customers.
         </p>
         
-        <div className="flex justify-center mb-8">
+        <div className="flex flex-wrap justify-center mb-8">
           {categories.map(category => (
             <button
               key={category}
-              className={`px-4 py-2 mx-2 rounded-lg font-medium transition-colors duration-300 ${selectedCategory === category ? 'bg-indigo-800 text-white' : 'bg-white text-indigo-800 border border-indigo-800'}`}
+              className={`px-4 py-2 m-1 rounded-lg font-medium transition-colors duration-300 ${selectedCategory === category ? 'bg-indigo-800 text-white' : 'bg-white text-indigo-800 border border-indigo-800'}`}
               onClick={() => setSelectedCategory(category)}
             >
               {category}
@@ -48,15 +48,15 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        <div className="overflow-x-auto pb-4 scrollbar-hide">
+        <div className="overflow-x-auto pb-4">
           <div className="flex space-x-6 md:space-x-8 min-w-max">
             {filteredServices.map((service, index) => (
-              <div key={index} className="w-64 md:w-80 flex-shrink-0">
-                <div className="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:shadow-xl hover:scale-105">
+              <div key={index} className="w-64 md:w-80 flex-shrink-0 mb-6">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg transition-transform duration-300 hover:shadow-xl hover:scale-105">
                   <img 
                     src={service.image} 
                     alt={service.name} 
-                    className="w-full h-48 object-cover mb-4 rounded"
+                    className="w-full h-32 md:h-48 object-cover mb-4 rounded"
                   />
                   <p className="text-center text-lg font-semibold text-indigo-700">
                     {service.name}
