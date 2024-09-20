@@ -26,7 +26,7 @@ const Services: React.FC = () => {
     : services.filter(service => service.category === selectedCategory);
 
   return (
-    <section id="services" className="py-16 bg-gray-100">
+    <section id="services" >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-indigo-800">
           Our Services
@@ -48,7 +48,12 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        <div className="overflow-x-auto pb-4">
+        <div className="overflow-x-auto pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <style>{`
+            .overflow-x-auto::-webkit-scrollbar {
+              display: none;
+            }
+          `}</style>
           <div className="flex space-x-6 md:space-x-8 min-w-max">
             {filteredServices.map((service, index) => (
               <div key={index} className="w-64 md:w-80 flex-shrink-0 mb-6">

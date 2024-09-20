@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
       <section id="products" className="px-4 md:px-0 pt-16"> {/* Adjust padding-top to prevent content from being hidden by header */}
         <HomeProducts />
       </section>
-      <section id="services" className="px-4 md:px-0 pt-16"> {/* Adjust padding-top to prevent content from being hidden by header */}
+      <section id="services" className="px-4 md:px-0 pt-8"> {/* Adjust padding-top to prevent content from being hidden by header */}
         <Services />
       </section>
       <section id="about" className="px-4 md:px-0 pt-16"> {/* Adjust padding-top to prevent content from being hidden by header */}
