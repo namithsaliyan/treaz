@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { custombottle } from '../utils/data'; // Assuming the image is exported from data.tsx
+import { custombottle } from '../utils/data'; 
 
 const CustomizedBottle = () => {
   const [name, setName] = useState('');
