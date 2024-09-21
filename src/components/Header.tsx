@@ -46,7 +46,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="bg-gradient-to-r from-green-400 to-sky-600 text-white shadow-md fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out">
+    <header className="bg-gradient-to-r from-sky-500 to-green-500 text-white shadow-md fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out">
       <div className="container mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
           <div className="logo">
@@ -83,13 +83,13 @@ const Header: React.FC = () => {
         </div>
 
         {isMenuOpen && (
-          <nav className="md:hidden mt-2 bg-gradient-to-r from-sky-400 to-sky-600 text-white transition-transform transform duration-300 ease-in-out">
+          <nav className="md:hidden mt-2 bg-gradient-to-r from-sky-500 to-green-500 text-white transition-transform transform duration-300 ease-in-out">
             <ul className="flex flex-col space-y-2">
               {navItems.map(({ name, icon }) => (
                 <li key={name} className="group relative">
                   <button
                     onClick={() => handleNavigation(name.toLowerCase())}
-                    className="flex items-center space-x-2 px-4 py-2 text-sm hover:bg-purple-700 rounded transition-colors duration-300 ease-in-out"
+                    className="flex items-center space-x-2 px-4 py-2 text-sm hover:bg-green-600 rounded transition-colors duration-300 ease-in-out"
                   >
                     <span className="text-xl">{icon}</span>
                     <span>{name}</span>
