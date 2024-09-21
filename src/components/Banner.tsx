@@ -1,28 +1,89 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { bg } from '../utils/data';
- 
+import React, { useState, useEffect } from 'react';
+
+const bannerImages = [
+  'https://bisleri-shop-storage.s3.ap-south-1.amazonaws.com/page-banners/June2024/ho7F6ER4g3o8vS1u8Iv0.webp',
+  'https://bisleri-shop-storage.s3.ap-south-1.amazonaws.com/page-banners/June2024/eXznwexEkl4S8rAvs1P0.webp',
+  'https://bisleri-shop-storage.s3.ap-south-1.amazonaws.com/page-banners/June2024/Gk5st0y4fHUGCA5FbxZH.webp',
+];
+
 const Banner: React.FC = () => {
-  const isMobile = window.innerWidth <= 768;
-  const bgImage = isMobile
-    ? bg
-    : bg;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Auto slide every 5 seconds unless hovered
+  useEffect(() => {
+    if (!isHovered) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % bannerImages.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [isHovered]);
+
+  // Manually go to next/previous image
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % bannerImages.length);
+  };
+
+  const goToPrev = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + bannerImages.length) % bannerImages.length);
+  };
 
   return (
     <section
-      id="home"
-      className="relative h-screen flex flex-col items-center justify-center text-white overflow-hidden -my-2 "
-      style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      className="relative flex items-center justify-center mx-auto overflow-hidden"
+      style={{ maxWidth: '1000px', height: 'auto' }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-70 z-10"></div>
-      
-      <div className="relative z-20 flex flex-col items-center mt-96">
-        <Link
-          to="/products"
-          className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 font-MontBold text-white font-semibold py-4 text-xl px-8 rounded-2xl  focus:outline-none focus:ring-2 focus:ring-blue-300"
-        >
-          Shop Now
-        </Link>
+      <div
+        className="relative w-full h-auto"
+        style={{
+          display: 'flex',
+          transition: 'transform 1s ease-in-out',
+          transform: `translateX(-${currentImageIndex * 100}%)`,
+        }}
+      >
+        {bannerImages.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Banner ${index + 1}`}
+            className="w-full h-auto object-contain"
+            style={{ flexShrink: 0 }}
+          />
+        ))}
+      </div>
+
+      {/* Navigation arrows */}
+      <button
+        aria-label="Previous Slide"
+        className="absolute left-2 bg-white rounded-full p-2 shadow-lg z-10 hover:bg-gray-300"
+        onClick={goToPrev}
+      >
+        &#9664;
+      </button>
+      <button
+        aria-label="Next Slide"
+        className="absolute right-2 bg-white rounded-full p-2 shadow-lg z-10 hover:bg-gray-300"
+        onClick={goToNext}
+      >
+        &#9654;
+      </button>
+
+      {/* Navigation dots */}
+      <div className="absolute bottom-4 flex space-x-2">
+        {bannerImages.map((_, index) => (
+          <span
+            key={index}
+            className={`h-3 w-3 rounded-full transition-colors duration-300 ${
+              index === currentImageIndex ? 'bg-blue-500' : 'bg-gray-300'
+            }`}
+            onClick={() => setCurrentImageIndex(index)}
+            style={{ cursor: 'pointer' }}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
     </section>
   );

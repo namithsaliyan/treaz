@@ -15,7 +15,7 @@ const HomeProducts: React.FC = () => {
 
   const products = [
     { name: 'Natural Spring Water', size: '500ml', image: banner },
-    { name: 'Still Mineral Drnking Water', size: '750ml', image: banner },
+    { name: 'Still Mineral Drinking Water', size: '750ml', image: banner },
     { name: 'Sparkling Mineral Water', size: '1L', image: banner },
     { name: 'Sparkling Mineral Water', size: '1L', image: banner },
   ];
@@ -86,7 +86,7 @@ const HomeProducts: React.FC = () => {
                 <h3 className="text-xl font-MontSemibold mb-2 text-green-800">{product.name}</h3>
                 <button 
                   onClick={() => handleOrderClick(product.name)}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+                  className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded transition duration-300"
                 >
                   Order Now
                 </button>

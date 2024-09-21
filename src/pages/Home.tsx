@@ -10,10 +10,10 @@ import Contact from '../components/Contact';
 const HomePage: React.FC = () => {
   return (
     <div className="overflow-x-hidden">
-      <section id="home" className="pt-16"> {/* Adjust padding-top to prevent content from being hidden by header */}
+      <section id="home" className="pt-14"> {/* Adjust padding-top to prevent content from being hidden by header */}
         <Banner />
       </section>
-      <section id="products" className="px-4 md:px-0 pt-16"> {/* Adjust padding-top to prevent content from being hidden by header */}
+      <section id="products" className="px-4 md:px-0 pt-6"> {/* Adjust padding-top to prevent content from being hidden by header */}
         <HomeProducts />
       </section>
       <section id="services" className="px-4 md:px-0 pt-8"> {/* Adjust padding-top to prevent content from being hidden by header */}
