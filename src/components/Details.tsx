@@ -66,10 +66,10 @@ const Details: React.FC = () => {
                   ></path>
                 </svg>
                 <a
-                  href="mailto:wecare@treaz.in"
+                  href="mailto:connect@treaz.in"
                   className="text-indigo-600 hover:text-pink-500 transition duration-300 font-MontSemibold"
                 >
-                  wecare@treaz.in
+                  connect@treaz.in
                 </a>
               </p>
               <p className="flex items-center text-lg">
