@@ -88,7 +88,7 @@ const Details: React.FC = () => {
                   ></path>
                 </svg>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+919148453611"
                   className="text-indigo-600 hover:text-pink-500 transition duration-300 font-MontRegular"
                 >
                   +123 456 7890
